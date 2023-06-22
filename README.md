@@ -1,7 +1,7 @@
 # nabacamlv2
 해설의 개인과제 파일을 사용했고, 예제 강의를 바탕으로 lv2과제를 수행하였습니다.
 
-회원가입: localhost:3000/api/users/users<br>
+회원가입: localhost:3000/api/users/users (post) <br<br>
 로그인: localhost:3000/api/auth/auth 
 
 게시물과 댓글은 로그인을 해야 작성이 가능합니다.<br><br>
