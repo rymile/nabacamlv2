@@ -10,16 +10,19 @@
 그래서 로그아웃하려면 쿠키를 삭제하고 서버를 재시작합니다.
 
 게시물 작성
-localhost:3000/api/post
+localhost:3000/api/post (post)
+
+게시물 조회
+localhost:3000/api/post (get)
 
 게시물 수정
-localhost:3000/api/post/postid
+localhost:3000/api/post/postid (put)
 
 게시물 삭제
-localhost:3000/api/post/postid
+localhost:3000/api/post/postid (delete)
 
 댓글 작성
-localhost:3000/api/post/postid
+localhost:3000/api/post/postid 
 
 댓글 조회
 localhost:3000/api/comment/postid
