@@ -23,6 +23,7 @@ router
   })
   //게시물 작성
   .post(authMiddleware, async (req, res) => {
+    // const { user } = res.locals;
     const { user, password, title, content } = req.body;
 
     if (!user || !password || !title || !content) {
@@ -36,7 +37,7 @@ router
 
 router
   .route("/:id")
-  .get(authMiddleware, async (req, res) => {
+  .get(async (req, res) => {
     const { id } = req.params;
 
     if (!ObjectId.isValid(id)) {

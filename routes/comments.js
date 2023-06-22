@@ -3,7 +3,9 @@ const router = express.Router();
 const Comment = require("../schemas/comment.js");
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Types;
+const authMiddleware = require("../middlewares/auth-middleware.js");
 
+//댓글 조회
 router
   .route("/:postId")
   .get(async (req, res) => {
@@ -26,7 +28,8 @@ router
       );
     }
   })
-  .post(async (req, res) => {
+  //댓글 작성
+  .post(authMiddleware, async (req, res) => {
     const { postId } = req.params;
     const { user, password, content } = req.body;
 
@@ -43,7 +46,8 @@ router
 
 router
   .route("/:id")
-  .put(async (req, res) => {
+  //댓글 수정
+  .put(authMiddleware, async (req, res) => {
     const { id } = req.params;
     const { content, password } = req.body;
 
@@ -65,7 +69,8 @@ router
       }
     }
   })
-  .delete(async (req, res) => {
+  //댓글 삭제
+  .delete(authMiddleware, async (req, res) => {
     const { id } = req.params;
     const { password } = req.body;
 
