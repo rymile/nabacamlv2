@@ -2,7 +2,7 @@
 해설의 개인과제 파일을 사용했고, 예제 강의를 바탕으로 lv2과제를 수행하였습니다.
 
 회원가입: localhost:3000/api/users/users (post) <br><br>
-로그인: localhost:3000/api/auth/auth 
+로그인: localhost:3000/api/auth/auth (post)
 
 게시물과 댓글은 로그인을 해야 작성이 가능합니다.<br><br>
 조회는 로그인과 상관없이 가능합니다.<br><br>
