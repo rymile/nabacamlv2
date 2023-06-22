@@ -3,7 +3,9 @@ const router = express.Router();
 const Post = require("../schemas/post.js");
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Types;
+const authMiddleware = require("../middlewares/auth-middleware.js");
 
+//게시물 조회
 router
   .route("/")
   .get(async (req, res) => {
@@ -19,7 +21,8 @@ router
       })
     );
   })
-  .post(async (req, res) => {
+  //게시물 작성
+  .post(authMiddleware, async (req, res) => {
     const { user, password, title, content } = req.body;
 
     if (!user || !password || !title || !content) {
@@ -33,7 +36,7 @@ router
 
 router
   .route("/:id")
-  .get(async (req, res) => {
+  .get(authMiddleware, async (req, res) => {
     const { id } = req.params;
 
     if (!ObjectId.isValid(id)) {
@@ -54,7 +57,8 @@ router
       }
     }
   })
-  .put(async (req, res) => {
+  //게시물 수정
+  .put(authMiddleware, async (req, res) => {
     const { id } = req.params;
     const { user, content, password, title } = req.body;
 
@@ -75,7 +79,8 @@ router
       }
     }
   })
-  .delete(async (req, res) => {
+  //게시물 삭제
+  .delete(authMiddleware, async (req, res) => {
     const { id } = req.params;
     const { password } = req.body;
 
