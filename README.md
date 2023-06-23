@@ -22,7 +22,7 @@ localhost:3000/api/post/postid (put)
 localhost:3000/api/post/postid (delete)
 
 댓글 작성
-localhost:3000/api/post/postid 
+localhost:3000/api/comment/postid 
 
 댓글 조회
 localhost:3000/api/comment/postid
